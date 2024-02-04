@@ -1,0 +1,678 @@
+{
+	"info": {
+		"_postman_id": "63855a50-e1e1-4ecf-a006-256584ae65b4",
+		"name": "pinterest_app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31192748"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "sign-up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"quyet@gmail.com\",\r\n    \"password\":\"12345\",\r\n    \"full_name\":\"duong xuan quyet\",\r\n    \"age\":12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/auth/sign-up",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"sign-up"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sign-in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"quyet@gmail.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/auth/sign-in",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"sign-in"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "get-detail-user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTI3NDIxOCwiZXhwIjoxNzA1Mjc0NTE4fQ.iunpqKnng2K0pjZllaxx52pz1Q7W7Kfml8gM67vUAIQ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\" :\"3d17f7e8-bb97-4907-bccc-4077740ace3a\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/user/get-detail-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"get-detail-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTQ4NDA2NywiZXhwIjoxNzA1NDg0MzY3fQ.BQCFNuQTPcFIMNG13et9zViLSwI8H8dy4lGw4hlUnIs",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "16",
+									"type": "text"
+								},
+								{
+									"key": "fileAvatar",
+									"type": "file",
+									"src": "/C:/Users/quyet/Downloads/129844186.jfif"
+								},
+								{
+									"key": "fullName",
+									"value": "Dương Xuân Quyết",
+									"type": "text"
+								},
+								{
+									"key": "introduce",
+									"value": "introduce .......",
+									"type": "text"
+								},
+								{
+									"key": "linkUserInfo",
+									"value": "http://linkUserInfo",
+									"type": "text"
+								},
+								{
+									"key": "userName",
+									"value": "how16",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/user/update-user",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"user",
+								"update-user"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comment",
+			"item": [
+				{
+					"name": "get-comment-by-imageId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/comment/get-comment-by-imageId/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"comment",
+								"get-comment-by-imageId",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "post-record-comment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTI4NDkxOSwiZXhwIjoxNzA1Mjg1MjE5fQ.kPSmp1NG5kd1oVL5LkIoO8jekQ798UUfj7dpvy-c3-w",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":16,\r\n    \"imageId\":11,\r\n    \"content\":\"verry well\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/comment/post-record-comment",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"comment",
+								"post-record-comment"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-comment",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTI3ODIxMywiZXhwIjoxNzA1Mjc4NTEzfQ.FEy1aX9nqjkWsm3PuXydRyTM8YNvdtD8Y8cNct9D4Zo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":16,\r\n    \"commentId\":\"14\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/comment/delete-comment",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"comment",
+								"delete-comment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "image",
+			"item": [
+				{
+					"name": "get-list-image",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/image/get-list-image/3/6",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"get-list-image",
+								"3",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-list-image-by-name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/image/get-list-image-by-name?name=dolphin",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"get-list-image-by-name"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "dolphin"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-detail-image-by-imageId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8080/image/get-detail-image-by-imageId/15",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"get-detail-image-by-imageId",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-list-image-created-by-userId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTMyOTM5OCwiZXhwIjoxNzA1MzI5Njk4fQ._vcV3RZa0dl1MFbuDUtL0lknSpFXRtdUHyRcSlsmoOc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":16\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/image/get-list-image-created-by-userId",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"get-list-image-created-by-userId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete-image-by-imageId",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTYzMTQyMSwiZXhwIjoxNzA1NjMxNzIxfQ.jdtXe6dIXsfeb1LXLiOJF64wvEUY0e9Fe0BTk_TzWdk",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":17,\r\n    \"imageId\":22\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/image/delete-image-by-imageId",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"delete-image-by-imageId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTYzMTEwOSwiZXhwIjoxNzA1NjMxNDA5fQ.evUJLtimE_XNOjl6jG9Gapb_diEXnWsxL8ntGEmlm9k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "userId",
+									"value": "17",
+									"type": "text"
+								},
+								{
+									"key": "title",
+									"value": "image logo",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "verywell",
+									"type": "text"
+								},
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/admin/Downloads/FU5-YO6XoAAGtL3.jpg"
+								},
+								{
+									"key": "linkWebDetail",
+									"value": "http://link-web-detail",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/image/create-image",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"image",
+								"create-image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "savedImage",
+			"item": [
+				{
+					"name": "get-check-user-saved-image",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTM2ODczNywiZXhwIjoxNzA1MzY5MDM3fQ.NGeicxTRw6DP_ThpaAsQAdZ_26CfrYeRnP_L4VUr2h8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":16,\r\n    \"imageId\":9\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/savedImage/get-check-user-saved-image",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"savedImage",
+								"get-check-user-saved-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-list-saved-image-by-userId",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTM5Njk0MiwiZXhwIjoxNzA1Mzk3MjQyfQ.QK3dpmWZ-gkpL-QpuyIVESCoEjQ_W_eEJ2yjSHcMFrI",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":16\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/savedImage/get-list-saved-image-by-userId",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"savedImage",
+								"get-list-saved-image-by-userId"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "saved-image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTM3MTM4MiwiZXhwIjoxNzA1MzcxNjgyfQ.8JR43_L6WtLWp_-58zhneeaQxX_8v6z7G--UQLLRB5k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":16,\r\n    \"imageId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/savedImage/saved-image",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"savedImage",
+								"saved-image"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unsaved-image",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InF1eWV0QGdtYWlsLmNvbSIsImlhdCI6MTcwNTM3MTM4MiwiZXhwIjoxNzA1MzcxNjgyfQ.8JR43_L6WtLWp_-58zhneeaQxX_8v6z7G--UQLLRB5k",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\":16,\r\n    \"imageId\":2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8080/savedImage/unsaved-image",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8080",
+							"path": [
+								"savedImage",
+								"unsaved-image"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
